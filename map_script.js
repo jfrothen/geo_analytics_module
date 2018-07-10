@@ -27,13 +27,18 @@ $("#createButton").click(function() {
     //GENERATE SAMPLEs TO WHATEVER BACKEND WE'RE USING
 })
 
-
+/*
+Takes coordinates as input and returns a JSON from Google's geocoding API
+(USING MY API KEY HARDCODED IN
+ */
 function getLocationFromCoord(coordX, coordY) {
     var xhr = new XMLHttpRequest();
 
     var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=";
 
-    url += (coordX + "," + coordY + "&key=AIzaSyAUmzQ1cjY6rIYx_Nd2B7ZC8zWFOnN54Rw");
+    var myKey = "AIzaSyAUmzQ1cjY6rIYx_Nd2B7ZC8zWFOnN54Rw";
+
+    url += (coordX + "," + coordY + "&key=" + myKey);
 
     xhr.open('GET', url, true);
     xhr.send();
@@ -46,6 +51,4 @@ function getLocationFromCoord(coordX, coordY) {
             alert(response.results[0].address_components[5].long_name);
         }
     }
-
-
 }

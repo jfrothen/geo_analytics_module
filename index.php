@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php
+    include 'database.php';
+    ?>
     <style>
         /* Set the size of the div element that contains the map */
         #map {
@@ -8,6 +11,8 @@
             width: 100%;  /* The width is the width of the web page */
         }
     </style>
+
+
 </head>
 <body>
 <h3>My Google Maps - powered analytic Demo</h3>
@@ -36,13 +41,13 @@
 <script>
     // Initialize and add the map
     function initMap() {
-        // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
-        // The map, centered at Uluru
+        // The location of New England
+        var newEng = {lat: 43.9654, lng: -71};
+        // The map, centered at New England
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
+            document.getElementById('map'), {zoom: 6, center: newEng});
+        // The marker, positioned at New England
+        var marker = new google.maps.Marker({position: newEng, map: map});
     }
 </script>
 <!--Load the API from the specified URL
